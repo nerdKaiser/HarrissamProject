@@ -1,0 +1,8 @@
+<td>
+            
+
+  <?php if(isset($useroles)){  if(in_array("delete_services",$useroles)){ ?> 
+<a href="view_services.php?id=<?=$row['id'];?>"><button type="button" class="btn btn-xs btn-danger" ><i class="fa fa-trash"></i></button></a>
+               <?php } } ?> 
+  
+</td>
