@@ -104,7 +104,7 @@ $dod = $row['delivery date'];
 
   <option value=" ">--Select customer--</option>
   <?php  
-  $sql2 = "SELECT * FROM customer where id!=1";
+  $sql2 = "SELECT * FROM client where id!=1";
   $result2 = $conn->query($sql2); 
   while($row2= mysqli_fetch_array($result2)){
   ?>

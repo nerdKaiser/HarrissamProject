@@ -46,7 +46,7 @@ if (empty($_SESSION['username'])) {
                 </thead>
                 <tbody>
                     <?php
-                        $sql = "SELECT * FROM customer";
+                        $sql = "SELECT * FROM client";
                         $result = $conn->query($sql);
 
                         while ($row = $result->fetch_assoc()) {

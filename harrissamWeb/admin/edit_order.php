@@ -96,15 +96,15 @@ $dod = $row['delivery date'];
 
 <div class="form-group">
   <div class="row">
-  <label class="col-sm-3 control-label">customer  Name</label>
+  <label class="col-sm-3 control-label">Customer  Name</label>
   <div class="col-sm-9">
   <select name="fname" id="event" class="form-control" required="">
 
 
 
-  <option value=" ">--Select customer--</option>
+  <option value=" ">--Select Customer--</option>
   <?php  
-  $sql2 = "SELECT * FROM customer where id!=1";
+  $sql2 = "SELECT * FROM client where id!=1";
   $result2 = $conn->query($sql2); 
   while($row2= mysqli_fetch_array($result2)){
   ?>

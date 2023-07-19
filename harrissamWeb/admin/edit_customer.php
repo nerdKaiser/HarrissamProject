@@ -11,7 +11,7 @@ if(isset($_POST["btn_update"]))
 {
 extract($_POST);
 
- $q1="UPDATE `customer` SET `fname`='$fname',`lname`='$lname',`contact`='$contact',`address`='$address',`password`='$password' WHERE `id`='".$_GET['id']."'"; 
+ $q1="UPDATE `client` SET `fname`='$fname',`lname`='$lname',`contact`='$contact',`address`='$address',`password`='$password' WHERE `id`='".$_GET['id']."'"; 
 //$q2=$conn->query($q1);
 
 if ($conn->query($q1) === TRUE) {
@@ -34,7 +34,7 @@ window.location="view_customer.php";
 ?>
 
 <?php
-$que="select * from customer where id='".$_GET["id"]."'";
+$que="select * from client where id='".$_GET["id"]."'";
 $query=$conn->query($que);
 while($row=mysqli_fetch_array($query))
 {

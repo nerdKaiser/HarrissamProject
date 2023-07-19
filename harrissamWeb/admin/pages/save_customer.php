@@ -3,7 +3,7 @@
 include('../connect.php');
 
 extract($_POST);
-  $sql="INSERT INTO `customer`(`fname`, `lname`, `contact`, `address`, `password`) VALUES ('$fname','$lname','$contact','$address','$password')";
+  $sql="INSERT INTO `client`(`fname`, `lname`, `contact`, `address`, `password`) VALUES ('$fname','$lname','$contact','$address','$password')";
 
 
  if ($conn->query($sql) === TRUE) {
