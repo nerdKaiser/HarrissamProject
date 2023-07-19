@@ -68,7 +68,7 @@ $sql1 = "SELECT * FROM `project_types` where id='".$row['id']."'" ;
 $result1 = $conn->query($sql1);
 $row1 = $result1->fetch_assoc();
 
-$sql2 = "SELECT * FROM `customer` where id='".$row['id']."'";
+$sql2 = "SELECT * FROM `client` where id='".$row['id']."'";
 $result2 = $conn->query($sql2);
 $row2 = $result2->fetch_assoc();
 ?>

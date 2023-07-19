@@ -2,7 +2,7 @@
 include 'connect.php';
 session_start();
 
-$sql = "DELETE FROM customer WHERE id='".$_GET["id"]."'";
+$sql = "DELETE FROM client WHERE id='".$_GET["id"]."'";
 $res = $conn->query($sql) ;
  $_SESSION['success']='Customer succesfully removed';
 ?>

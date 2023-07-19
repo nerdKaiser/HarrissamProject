@@ -48,7 +48,7 @@ Sure
 <thead>
 <tr>
 <th>id</th>
-<th>customer Name</th>
+<th>client Name</th>
 <!-- <th>Last Name</th> -->
 <th>service name</th>
 <th>Description</th>
@@ -73,7 +73,7 @@ $sql1 = "SELECT * FROM `service` where id='".$row['sname']."'";
 $result1 = $conn->query($sql1);
 $row1 = $result1->fetch_assoc();
 
-$sql2 = "SELECT * FROM `customer` where 
+$sql2 = "SELECT * FROM `client` where 
 id='".$row['fname']."'";
 $result2 = $conn->query($sql2);
 $row2 = $result2->fetch_assoc();

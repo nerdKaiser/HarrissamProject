@@ -11,7 +11,7 @@ if($_SESSION["username"]=='admin' || $_SESSION["username"]=='user'){
     $q = "select * from  admin where id = '".$_SESSION['id']."'";
 }
 else {
-   $q = "select * from  tbl_customer where id = '".$_SESSION['id']."'";
+   $q = "select * from  tbl_client where id = '".$_SESSION['id']."'";
 }
  
   $q1 = $conn->query($q);
@@ -52,7 +52,7 @@ if($_SESSION["username"]=='admin' || $_SESSION["username"]=='user'){
    $sql = "update  admin set `password`='$confirm' where id = '".$_SESSION['id']."'";
 }
 else {
-  $sql = "update  tbl_customer set `password`='$confirm' where id = '".$_SESSION['id']."'";
+  $sql = "update  tbl_client set `password`='$confirm' where id = '".$_SESSION['id']."'";
 }    
   
   $res = $conn->query($sql);

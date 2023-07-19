@@ -10,7 +10,7 @@ $salt = createSalt();
 $pass = hash('sha256', $salt . $passw);
 
 extract($_POST);
-  sql="INSERT INTO `customer`(`id`, `fname`, `lname`, `contact`, `address`, `discription`, `pd`, `dd`) VALUES ('$fname','$lname','$contact','$address','$discription','$pd','$dd')";
+  sql="INSERT INTO `client`(`id`, `fname`, `lname`, `contact`, `address`, `discription`, `pd`, `dd`) VALUES ('$fname','$lname','$contact','$address','$discription','$pd','$dd')";
  if ($conn->query($sql) === TRUE) {
       $_SESSION['success']=' Record Successfully Added';
      ?>
