@@ -44,11 +44,7 @@ if(isset($_POST["btn_update"]))
 }
 
 
-  ?>
-  <script>
-  
-  </script>
-  <?php
+
 }
 
 ?>
@@ -58,7 +54,7 @@ $que="select * from  admin where id = '".$_SESSION["id"]."'";
 $query=$conn->query($que);
 while($row=mysqli_fetch_array($query))
 {
-  //print_r($row);
+  // print_r($row);
   extract($row);
   $fname = $row['fname'];
   $lname = $row['lname'];
@@ -184,6 +180,8 @@ while($row=mysqli_fetch_array($query))
            
 
 <?php include('footer.php');?>
+
+
 
 <link rel="stylesheet" href="popup_style.css">
 <?php if(!empty($_SESSION['success'])) {  ?>

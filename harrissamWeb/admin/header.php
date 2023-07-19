@@ -16,7 +16,7 @@ include('connect.php');
                     $row_header_logo = mysqli_fetch_array($result_header_logo);
                     ?>
                     <b><img src="uploadImage/Logo/<?php echo $row_header_logo['logo']; ?>" alt="homepage"
-                            class="dark-logo" style="width:100%;height:auto;" /></b>
+                            class="dark-logo" style="width:100%;height: 50px;;" /></b>
 
                 </a>
             </div>

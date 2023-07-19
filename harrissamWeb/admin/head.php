@@ -10,8 +10,9 @@
     <meta name="author" content="">
 
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="Harrissam-Logo(1).png"/>
-    <link rel="shortcut icon" type="image/png" href="Link to the image"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="Harrissam-Logo(1).png" style="width: 50px; height: 50px;" />
+   <link rel="shortcut icon" type="image/png" href="Link to the image" style="width: 50px; height: 5px;" />
+
      <?php
              include('connect.php');
              $sql_head_title = "select * from manage_website"; 

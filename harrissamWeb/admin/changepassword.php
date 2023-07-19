@@ -25,7 +25,8 @@ if(isset($_POST["btn_password"])){
   $old = hash('sha256',$_POST['old_password']);
   $pass_new = hash('sha256', $_POST['new_password']);
   $confirm_new = hash('sha256', $_POST['confirm_password']);
-
+//$passw = hash('sha256',$p);
+//echo $pass_new;
 function createSalt()
 {
     return '2123293dsj2hu2nikhiljdsd';
