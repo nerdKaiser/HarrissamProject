@@ -40,22 +40,6 @@ if(isset($_POST["btn_web"]))
      $login_logo =$_POST['old_login_image'];
   }
 
-   $invoice_logo = basename($_FILES["invoice_image"]["name"]);
-  if($_FILES["invoice_image"]["tmp_name"]!=''){
-    $image = $target_dir . basename($_FILES["invoice_image"]["name"]);
-   if (move_uploaded_file($_FILES["invoice_image"]["tmp_name"], $image)) {
-    
-       @unlink("uploadImage/Logo/".$_POST['old_invoice_image']);
-    
-    } else {
-        echo "Sorry, there was an error uploading your file.";
-    }
-  
-  }
-  else {
-     $invoice_logo =$_POST['old_invoice_image'];
-  }
-
     $background_login_image = basename($_FILES["back_login_image"]["name"]);
   if($_FILES["back_login_image"]["tmp_name"]!=''){
     $image = $target_dir . basename($_FILES["back_login_image"]["name"]);
@@ -72,7 +56,7 @@ if(isset($_POST["btn_web"]))
      $background_login_image =$_POST['old_back_login_image'];
   }
   
-   $q1="UPDATE `manage_website` SET `title`='$title',`short_title`='$short_title',`logo`='$website_logo',`footer`='$footer' ,`login_logo`='$login_logo',`invoice_logo`='$invoice_logo' , `background_login_image` = '$background_login_image'";
+   $q1="UPDATE `manage_website` SET `title`='$title',`short_title`='$short_title',`logo`='$website_logo' ,`login_logo`='$login_logo', `background_login_image` = '$background_login_image'";
   if ($conn->query($q1) === TRUE) {
    
       $_SESSION['success']='Record Successfully Updated';
@@ -88,7 +72,6 @@ if(isset($_POST["btn_web"]))
 }
   ?>
   <script>
-  //window.location = "sms_config.php";
   </script>
   <?php
 }
@@ -104,10 +87,9 @@ while($row=mysqli_fetch_array($query))
   extract($row);
   $title = $row['title'];
   $short_title = $row['short_title'];
-  $footer = $row['footer'];
   $website_logo = $row['logo'];
   $login_logo = $row['login_logo'];
-  $invoice_logo = $row['invoice_logo'];
+  $background_login_image = $row['background_login_image'];
 }
 
 ?> 
@@ -159,15 +141,6 @@ while($row=mysqli_fetch_array($query))
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <div class="form-group">
-                                          <div class="row">
-                                           <label class="col-sm-3 control-label">Footer</label>
-                                            <div class="col-sm-9">
-                                        <textarea class="textarea_editor form-control" name="footer" rows="5" placeholder="Enter text ..." style="height:300px;"><?php echo $footer;?></textarea>
-                                      </div>
-                                        </div>
-                                    </div>
 
 
                                          <div class="form-group">
@@ -222,9 +195,6 @@ while($row=mysqli_fetch_array($query))
            
 
 <?php include('footer.php');?>
-
-<!--  Author Name: Nikhil Bhalerao - www.nikhilbhalerao.com 
-PHP, Laravel and Codeignitor Developer -->
 
 <link rel="stylesheet" href="popup_style.css">
 <?php if(!empty($_SESSION['success'])) {  ?>
