@@ -26,7 +26,7 @@ if(isset($_POST["btn_update"]))
      $image1 =$_POST['old_image'];
   }
   
-   $q1="UPDATE `admin` SET `fname`='$fname',`lname`='$lname',`email`='$email',`contact`='$contact',`dob`='$dob',`gender`='$gender',`image`='$image1' where id = '".$_SESSION["id"]."'";
+   $q1="UPDATE `admin` SET `fname`='$fname',`lname`='$lname',`email`='$email',`contact`='$contact',`gender`='$gender',`dob`='$dob',`image`='$image1' where id = '".$_SESSION["id"]."'";
   //$query1=$conn->query($q1);
 
     if ($conn->query($q1) === TRUE) {
@@ -42,8 +42,6 @@ if(isset($_POST["btn_update"]))
    
       $_SESSION['error']='Something Went Wrong';
 }
-
-
 
 }
 
@@ -65,9 +63,6 @@ while($row=mysqli_fetch_array($query))
 }
 
 ?> 
-   
-
-
   <!-- Page wrapper  -->
         <div class="page-wrapper">
             <!-- Bread crumb -->
@@ -122,6 +117,15 @@ while($row=mysqli_fetch_array($query))
                                                 </div>
                                             </div>
                                         </div>
+
+                                      <div class="form-group">
+                                        <div class="row">
+                                          <label class="col-sm-3 control-label">Contact</label>
+                                          <div class="col-sm-9">
+                                            <input type="text" value="<?php echo $contact;?>" name="contact" class="form-control" required>
+                                          </div>
+                                        </div>
+                                      </div>
 
                                         <div class="form-group">
                                             <div class="row">

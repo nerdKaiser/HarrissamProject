@@ -1,5 +1,6 @@
 <?php
 include('connect.php');
+require_once("sess.php");
 ?>
 <!-- Main wrapper  -->
 <div id="main-wrapper">
