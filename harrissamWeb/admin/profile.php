@@ -9,13 +9,13 @@ if(isset($_POST["btn_update"]))
 {
   extract($_POST);
 
+if($_FILES["image"]["tmp_name"]!=''){
   $target_dir = "uploadImage/Profile/";
   $image1 = basename($_FILES["image"]["name"]);
-  if($_FILES["image"]["tmp_name"]!=''){
     $image = $target_dir . basename($_FILES["image"]["name"]);
    if (move_uploaded_file($_FILES["image"]["tmp_name"], $image)) {
     
-       @unlink("uploadImage/Profile/".$_POST['old_image']);
+    @unlink("uploadImage/Profile/" . $image1);
     
     } else {
         echo "Sorry, there was an error uploading your file.";
@@ -23,10 +23,10 @@ if(isset($_POST["btn_update"]))
   
   }
   else {
-     $image1 =$_POST['old_image'];
+    $image1 = $image;
   }
   
-   $q1="UPDATE `admin` SET `fname`='$fname',`lname`='$lname',`email`='$email',`contact`='$contact',`gender`='$gender',`dob`='$dob',`image`='$image1' where id = '".$_SESSION["id"]."'";
+   $q1="UPDATE `admin` SET `fname`='$fname',`lname`='$lname',`email`='$email',`contact`='$contact',`dob`='$dob',`gender`='$gender',`image`='$image1' where id = '".$_SESSION["id"]."'";
   //$query1=$conn->query($q1);
 
     if ($conn->query($q1) === TRUE) {
@@ -43,6 +43,11 @@ if(isset($_POST["btn_update"]))
       $_SESSION['error']='Something Went Wrong';
 }
 
+
+  ?>
+  <script>
+  </script>
+  <?php
 }
 
 ?>
@@ -52,7 +57,6 @@ $que="select * from  admin where id = '".$_SESSION["id"]."'";
 $query=$conn->query($que);
 while($row=mysqli_fetch_array($query))
 {
-  // print_r($row);
   extract($row);
   $fname = $row['fname'];
   $lname = $row['lname'];
@@ -63,6 +67,9 @@ while($row=mysqli_fetch_array($query))
 }
 
 ?> 
+   
+
+
   <!-- Page wrapper  -->
         <div class="page-wrapper">
             <!-- Bread crumb -->
@@ -81,7 +88,6 @@ while($row=mysqli_fetch_array($query))
             <div class="container-fluid">
                 <!-- Start Page Content -->
                 
-                <!-- /# row -->
                 <div class="row">
                     <div class="col-lg-8" style="margin-left: 10%;">
                         <div class="card">
@@ -117,15 +123,6 @@ while($row=mysqli_fetch_array($query))
                                                 </div>
                                             </div>
                                         </div>
-
-                                      <div class="form-group">
-                                        <div class="row">
-                                          <label class="col-sm-3 control-label">Contact</label>
-                                          <div class="col-sm-9">
-                                            <input type="text" value="<?php echo $contact;?>" name="contact" class="form-control" required>
-                                          </div>
-                                        </div>
-                                      </div>
 
                                         <div class="form-group">
                                             <div class="row">
@@ -176,16 +173,9 @@ while($row=mysqli_fetch_array($query))
                     </div>
                   
                 </div>
-                
-               
-                <!-- /# row -->
-
-                <!-- End PAge Content -->
            
 
 <?php include('footer.php');?>
-
-
 
 <link rel="stylesheet" href="popup_style.css">
 <?php if(!empty($_SESSION['success'])) {  ?>

@@ -155,7 +155,7 @@ if (empty($_SESSION['username'])) {
 
                                     ?>
                             </h2>
-                            <p class="m-b-0">New Clients</p>
+                            <p class="m-b-0">New Customers</p>
                         </div>
                     </div>
                 </div>
@@ -182,7 +182,7 @@ if (empty($_SESSION['username'])) {
 
                                     ?>
                             </h2>
-                            <p class="m-b-0">Active Client</p>
+                            <p class="m-b-0">Active Customers</p>
                         </div>
                     </div>
                 </div>
